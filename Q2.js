@@ -1,4 +1,4 @@
-Q2 Write a function that will plus element of the array if array less then 9
+// Q2 Write a function that will plus element of the array if array less then 9
 var plusOne = function(digits) {
     // Start from the last digit
     for (let i = digits.length - 1; i >= 0; i--) {
