@@ -16,4 +16,4 @@ function BubbleSort(arr){
 }
 
 
-console.log(BubbleSort([10,43,65,45,2]))
+console.log(BubbleSort([10,43,65,  -2,-19,-4 ,45,2]))
