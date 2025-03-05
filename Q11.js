@@ -1,12 +1,14 @@
-/**
- * @param {string} jewels
- * @param {string} stones
- * @return {number}
- */
-var numJewelsInStones = function(jewels, stones) {
-    let len = stones.length;
-    for (let i = 0; i < jewels.length; i++) stones = stones.replaceAll(jewels[i], "");
-    return len - stones.length;
+var leftRigthDifference = function(nums) {
+    let leftSum = 0;
+    let rightSum = nums.reduce((sum,curr)=>sum += curr,0);
+    return nums.map((curr,i)=>{
+        //leftSum - (rightSum - curr)
+        rightSum -= curr;
+        console.log(rightSum)
+        let res = Math.abs(leftSum - rightSum );
+        leftSum += curr;
+        return res
+    });
 };
 
-console.log("aA" ,"aAsadsa")
+console.log(leftRigthDifference([10,4,8,3]))
