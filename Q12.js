@@ -1,16 +1,21 @@
 /**
- * @param {number[]} nums
+ * @param {number[]} height
+ * @param {number} threshold
  * @return {number[]}
  */
-var separateDigits = function(nums) {
-    let arr = []
-    for(let i =0;i<nums.length;i++){
-         let odi = nums[i].toString().split("");
-        for (let j = 0; j < odi.length; j++) {
-            arr.push(parseInt(odi[j])); 
-        }
-    }
-return arr
+var stableMountains = function(height, threshold) {
 
+    let arr=[]
+
+    for (let i = 0; i < height.length - 1; i++) {
+        if (height[i] > threshold) {
+            arr.push(i + 1)
+        }
+
+    }
+
+    return arr
+
+
+    
 };
-console.log(separateDigits([13,25,83,77]))
