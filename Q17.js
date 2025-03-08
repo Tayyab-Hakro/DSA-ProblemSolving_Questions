@@ -1,19 +1,23 @@
 /**
- * @param {string} s
- * @return {string}
+ * @param {number[]} nums
+ * @return {number}
  */
-var replaceDigits = function(s) {
-    let ans=''
-    for(let char of s){
-        if(!isNaN(char)){
-            let z=ans.charCodeAt(ans.length-1)+parseInt(char)
-            ans=ans+String.fromCharCode(z)
-            
-        }else{
-            ans+=char
+var sumOfUnique = function(nums) {
+    let sum = 0;
+    for( let i=0; i<nums.length;i++){
+        let flag = 0;
+        for( let j=0;j<nums.length; j++){
+            if(i!=j && nums[i]== nums[j]){
+                flag =1;
+                break
+            }
+        }
+        if(flag==0){
+            sum+=nums[i];
         }
     }
-return ans
+    return sum;
 };
 
-console.log(replaceDigits("a1c1e1"))
+
+console.log(sumOfUnique([1,2,3,2]))
