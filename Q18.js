@@ -7,9 +7,7 @@ var majorityElement = function(nums){
     
     for(let i = 0 ;i<nums.length ;i++){
         let count = 0
-        if(nums[i] % 2=== 0){
-            console.log(nums[i])
-        }
+        
     }
     
     };

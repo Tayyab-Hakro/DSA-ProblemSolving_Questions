@@ -1,11 +1,12 @@
-/**
- * @param {string} s
- * @return {number}
- */
-var lengthOfLastWord = function(s) {
-    s =  s.trim()
-    let word = s.split(" ")
-    return word[word.length -1].length
-    };
+var reverseWords = function(s) {
+for(let i = s.length-1 ; i>0 ;i--){
+let word = s[i].replaceAll("  " )
+}
+};
 
-    console.log(lengthOfLastWord("hello world"))
+console.log(reverseWords("a good  ss example"))
+//  = 
+// Output: "example good a"
+for(let i =char.length -1 ; i >0 ;i--){
+    console.log(char[i])
+}
