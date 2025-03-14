@@ -1,11 +1,19 @@
 // 3. Find the largest and smallest number in an unsorted
 // integer array.
 function largestSmallest(arr){
-    let max = Math.max(...arr)
-    console.log(max)
-    let min = Math.min(...arr)
-    console.log(min)
-    return `Longest number is ${max} amd smllest is ${min}`
+let Largest = arr[0];
+let smallest = arr[0];
+for(let i = 0 ; i<arr.length ;i++){
+    if(arr[i+1] > Largest){
+        Largest = arr[i]
+
+    }
+    if(arr[i+1] < smallest){
+        smallest= arr[i]
+    }
+}
+    
+return {Largest , smallest}
 
 }
 
