@@ -1,3 +1,17 @@
-const str  = 'tayyab'
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var leftRigthDifference = function(nums) {
+    let leftSum = 0;
+    let rightSum = nums.reduce((sum,curr)=>sum += curr,0);
+    return nums.map((curr,i)=>{
+        //leftSum - (rightSum - curr)
+        rightSum -= curr;
+        let res = Math.abs(leftSum - rightSum );
+        leftSum += curr;
+        return res
+    });
+};
 
-console.log(str.slice(0 ,2))
+ console.log(leftRigthDifference([10,4,8,3]))
