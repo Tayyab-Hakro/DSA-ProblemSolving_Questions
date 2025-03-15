@@ -1,18 +1,16 @@
-// 4. Find all pairs of an integer array whose sum is equal to a
-//  given number.
+function findPairs(arr, targetSum) {
+    let seen = new Set();
+    let pairs = [];
 
-function SumogPairs(arr , targetSum){
-let pair =[];
-for(let i = 0 ; i<arr.length ;i++){
-    for(let j=1 ;j<arr.length ;j++){
-        if(arr[i] + arr[j] == targetSum){
-            pair.push(arr[i] ,arr[j])
+    for (let num of arr) {
+        let complement = targetSum - num;
+        if (seen.has(complement)) {
+            pairs.push([num, complement]);
         }
-   }
-}
-return  pair    
+        seen.add(num);
+    }
+
+    return pairs;
 }
 
-    
-
-console.log(SumogPairs([4,5,9,1,6,3,15,21]  ,9))
+console.log(findPairs([4, 5, 9, 1, 6, 3, 15, 21], 9));
